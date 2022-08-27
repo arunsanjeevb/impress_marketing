@@ -1,0 +1,202 @@
+<?php
+$foldername = 'dashboard';
+$url = $_SERVER['REQUEST_URI'];
+if (strpos($url, '/index.php') !== false) {
+    $foldername = 'dashboard';
+}
+if (strpos($url, '/master/') !== false) {
+    $foldername = 'master';
+}
+
+if ($_SERVER['SERVER_NAME'] == "13.127.33.107") {
+    $path_menu = 'upload/';
+} else {
+    $path_menu = '';
+}
+
+?>
+<div id="menubar" class="menubar-inverse ">
+    <div class="menubar-fixed-panel">
+        <div>
+            <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div class="expanded">
+            <a href="dashboard.php">
+                <span class="text-lg text-bold text-primary ">Diya Store Admin</span>
+            </a>
+        </div>
+    </div>
+    <div class="menubar-scroll-panel">
+        <ul id="main-menu" class="gui-controls">
+            <li class="<?php echo strpos($url, 'dashboard') !== false ? 'active expanded' : ''; ?>">
+                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/dashboard.php">
+                    <div class="gui-icon"><i class="md md-home"></i></div>
+                    <span class="title" style="font-size: 14px;">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="gui-folder <?php echo strpos($url, '/master1/') !== false ? 'active expanded' : ''; ?>" >
+                <a>
+                    <div class="gui-icon"><i class="md md-assessment"></i></div>
+                    <span class="title" style="font-size: 14px;">Master</span>
+                </a>
+                <ul>
+
+                    <li class="gui-folder  expanded">
+
+                        <ul>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/master1/language.php"><span class="title" style="font-size: 14px;">Add Language</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/master1/category1.php"><span class="title" style="font-size: 14px;">Add Category</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/master1/gst_master.php"><span class="title" style="font-size: 14px;">Add GST</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/master1/slider.php"><span class="title" style="font-size: 14px;">Add Slider</span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class="gui-folder <?php echo strpos($url, '/product/') !== false ? 'active expanded' : ''; ?> " >
+                <a>
+                    <div class="gui-icon"><i class="md md-assessment"></i></div>
+                    <span class="title" style="font-size: 14px;">Product</span>
+                </a>
+                <ul>
+
+                    <li class="gui-folder  expanded">
+
+                        <ul>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/product/add_product1.php"><span class="title" style="font-size: 14px;">Add Product</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/product/view_product.php"><span class="title" style="font-size: 14px;">View live Product</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/product/deleted_product.php"><span class="title" style="font-size: 14px;">Deleted Product</span></a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class="gui-folder <?php echo strpos($url, '/stock/') !== false ? 'active expanded' : ''; ?> ">
+                <a>
+                    <div class="gui-icon  "><i class="md md-assessment"></i></div>
+                    <span class="title" style="font-size: 14px;">Stock / Inward</span>
+                </a>
+                <ul>
+                    <li class="gui-folder  expanded">
+                        <ul>
+                        <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/stock/add_product_seller.php"><span class="title" style="font-size: 14px;">Add Seller</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/stock/add_inward.php"><span class="title" style="font-size: 14px;">Add Inward</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="gui-folder  <?php echo strpos($url, '/instore/') !== false ? 'active expanded' : ''; ?>">
+                <a>
+                    <div class="gui-icon"><i class="md md-assessment"></i></div>
+                    <span class="title" style="font-size: 14px;">Instore</span>
+                </a>
+                <ul>
+                    <li class="gui-folder  expanded">
+                        <ul>
+                        <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/instore/instore_order.php"><span class="title" style="font-size: 14px;">IN Store Orders</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="gui-folder <?php echo strpos($url, '/order_portal/') !== false ? 'active expanded' : ''; ?> ">
+                <a>
+                    <div class="gui-icon"><i class="md md-assessment"></i></div>
+                    <span class="title" style="font-size: 14px;">Order Portal</span>
+                </a>
+                <ul>
+                    <li class="gui-folder  expanded">
+                        <ul>
+                        <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/to_be_disbatch.php"><span class="title">To Be Verify Orders<span class="badge style-accent" style="color: white;"><?php echo $total_verify; ?></span></span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/waiting_dispatched.php">
+                                    <span class="title" style="font-size: 10px;">To Be Dispatched Orders <span class="badge style-accent" style="color: white;"><?php echo $total_to_be_dispact_order; ?></span></span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/dispatched.php"><span class="title">Dispatched Orders<span class="badge style-accent" style="color: white;"><?php echo $total_dispatch; ?></span></span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/total_order.php"><span class="title">Total Orders<span class="badge style-accent" style="color: white;"><?php echo $total_order; ?></span></span></a>
+                            </li>
+                           
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/payment_failure.php"><span class="title" style="font-size: 14px;">Payment Failure Orders</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/view_followup.php"><span class="title" style="font-size: 14px;">View Followup Orders</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/payment_hide.php"><span class="title" style="font-size: 14px;">Payment Hide</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/search_order.php"><span class="title" style="font-size: 14px;">Print Address</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/order_portal/search_user_order.php"><span class="title" style="font-size: 14px;">Search Orders</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="gui-folder <?php echo strpos($url, '/reports/') !== false ? 'active expanded' : ''; ?>">
+                <a>
+                    <div class="gui-icon"><i class="fa fa-shield"></i></div>
+                    <span class="title" style="font-size: 14px;">Reports</span>
+                </a>
+                <ul>
+
+                    <li class="gui-folder expanded">
+
+                        <ul>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/reports/purchase_count.php"><span class="title" style="font-size: 14px;">Product wise count</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/reports/date_wise_order_count.php"><span class="title" style="font-size: 14px;">Date wise count</span></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo $actual_link . "://" . $_SERVER['SERVER_NAME']; ?>/<?php echo $path_menu; ?>admin/reports/payment_state_wise.php"><span class="title" style="font-size: 14px;">State wise count</span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </li>
+
+
+        </ul>
+        <div class="menubar-foot-panel">
+            <small class="no-linebreak hidden-folded">
+                <span class="opacity-75">Copyright &copy; <?php echo date('Y'); ?></span> <strong>Nithra Edu Solutions</strong>
+            </small>
+        </div>
+    </div>
+</div>
